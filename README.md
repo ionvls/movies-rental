@@ -11,7 +11,14 @@ virtualenv -p python3 venv
 source venv/bin/activate
 ```
 
-Next, run
+You can use makefile to set everything up by running:
+```
+make clean
+make install
+```
+Or manually by:
+
+running
 
 ```
 pip install -r requirements.txt
@@ -19,9 +26,15 @@ pip install -r requirements.txt
 
 to get the dependencies.
 
-Create the databases requires and configure the `.env` file
+Create the databases *requires to configure the `.env` file
 
-Next, initialize the database
+```
+create_db movies_rental_api
+create_db movies_rental_api_test
+```
+
+
+Next, seed the database with some test data
 
 ```
 python manage.py seed_db
@@ -43,5 +56,9 @@ To run the test suite, simply run from the root directory like so
 
 ```
 pytest
+```
+or by 
+```
+python manage.py test
 ```
 

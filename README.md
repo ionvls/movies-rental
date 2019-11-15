@@ -40,7 +40,7 @@ Next, seed the database with some test data
 python manage.py seed_db
 ```
 
-Type "Y" to accept the message (which is just there to prevent you accidentally deleting things -- it's just a local SQLite database)
+Type "Y" to accept the message
 
 Finally run the app with
 
@@ -55,7 +55,7 @@ Navigate to the posted URL in your terminal to be greeted with Swagger, where yo
 To run the test suite, simply run from the root directory like so
 
 ```
-pytest
+pytest --cov=src
 ```
 or by 
 ```

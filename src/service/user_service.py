@@ -1,12 +1,11 @@
 from flask import g
 
 from src.model.user_model import UserModel, UserSchema
-from marshmallow import ValidationError
-
-from src.shared.Authentication import Auth
 from src.service import custom_response
+from src.shared.Authentication import Auth
 
 user_schema = UserSchema()
+
 
 class UserService:
 

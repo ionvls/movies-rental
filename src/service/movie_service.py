@@ -1,6 +1,5 @@
-from ..model.movie_model import MovieModel, MovieSchema
-from marshmallow import ValidationError
 from src.service import custom_response
+from ..model.movie_model import MovieModel, MovieSchema
 
 movie_schema = MovieSchema()
 

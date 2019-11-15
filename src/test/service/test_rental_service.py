@@ -1,14 +1,12 @@
-import unittest
 import json
-from typing import List
-
+import unittest
 from unittest.mock import patch
 
 from src.app import create_app, db
 from src.model import UserModel, UserSchema
+from src.model.movie_model import MovieModel, MovieSchema
 from src.model.rental_model import RentalModel, RentalSchema
 from src.service.rental_service import RentalService
-from src.model.movie_model import MovieModel, MovieSchema
 
 movie_schema = MovieSchema()
 user_schema = UserSchema()
@@ -36,7 +34,7 @@ class RentalTest(unittest.TestCase):
 
     @patch.object(RentalService, 'get_user', lambda: 1)
     def test_rental_create(self):
-        #fail first
+        # fail first
         res = RentalService.create(rental_schema.load({}, partial=True))
         self.assertEqual(res.status_code, 400)
 

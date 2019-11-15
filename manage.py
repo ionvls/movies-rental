@@ -21,6 +21,7 @@ manager = Manager(app=app)
 manager.add_command('db', MigrateCommand)
 manager.add_command('seed_db', SeedCommand)
 
+
 @manager.command
 def test():
     """Runs the unit tests."""
@@ -29,6 +30,7 @@ def test():
     if result.wasSuccessful():
         return 0
     return 1
+
 
 if __name__ == '__main__':
     manager.run()

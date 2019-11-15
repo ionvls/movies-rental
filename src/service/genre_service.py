@@ -1,6 +1,5 @@
-from src.model.movie_model import MovieSchema
 from src.model.genre_model import GenreModel, GenreSchema
-from marshmallow import ValidationError
+from src.model.movie_model import MovieSchema
 from src.service import custom_response
 
 genre_schema = GenreSchema()

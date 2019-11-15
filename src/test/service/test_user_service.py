@@ -1,6 +1,5 @@
-import unittest
 import json
-from typing import List
+import unittest
 from unittest.mock import patch
 
 from src.app import create_app, db
@@ -27,7 +26,6 @@ class UserTest(unittest.TestCase):
     def test_user_create(self):
         res = UserService.create(user_schema.load(self.user1))
 
-        json_data = json.loads(res.data)
         self.assertEqual(res.status_code, 201)
 
     def test_user_create_user_with_same_mail(self):
@@ -73,7 +71,6 @@ class UserTest(unittest.TestCase):
 
         res = UserService.login(user_schema.load({'password': 'passw0rd!'}, partial=True))
         self.assertEqual(res.status_code, 400)
-
 
     def test_login_wrong_email(self):
         user = UserModel(user_schema.load(self.user1))

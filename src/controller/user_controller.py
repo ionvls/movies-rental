@@ -5,7 +5,7 @@ from flask_accepts import accepts, responds
 from flask_restplus import Namespace, Resource
 
 from src.service.user_service import UserService
-from ..model.user_model import UserModel, UserSchema
+from ..model.user_model import UserSchema
 from ..shared.Authentication import Auth
 
 user_api = Namespace("User", description="User information")

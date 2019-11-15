@@ -1,12 +1,12 @@
 # /src/controller/rental_controller.py
 
 from flask import request
-from flask_accepts import accepts, responds
+from flask_accepts import responds
 from flask_restplus import Namespace, Resource
 
-from ..model.rental_model import RentalModel, RentalSchema
-from ..shared.Authentication import Auth
 from src.service.rental_service import RentalService
+from ..model.rental_model import RentalSchema
+from ..shared.Authentication import Auth
 
 rental_api = Namespace("Rental", description="Rental information")
 
@@ -44,7 +44,6 @@ class RentalIdResource(Resource):
         """Update Rental"""
         req_data = request.get_json()
         return RentalService.update(rental_id, req_data)
-
 
     @Auth.auth_required
     def delete(self, rental_id: int):

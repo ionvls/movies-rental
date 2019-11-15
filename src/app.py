@@ -22,7 +22,7 @@ def create_app(env_name):
     app.config.from_object(app_config[env_name])
     app.app_context().push()
     api = Api(app)
-    register_routes(api, app)
+    register_routes(api)
 
     # initializing bcrypt and db
     bcrypt.init_app(app)

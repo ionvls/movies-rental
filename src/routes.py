@@ -1,4 +1,4 @@
-def register_routes(api, app, root="/api"):
+def register_routes(api, root="/api"):
     from .controller.genre_controller import genre_api
     from .controller.movie_controller import movie_api
     from .controller.rental_controller import rental_api

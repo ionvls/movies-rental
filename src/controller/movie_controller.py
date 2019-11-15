@@ -2,11 +2,9 @@
 from flask import request
 from flask_accepts import responds, accepts
 from flask_restplus import Namespace, Resource
-from marshmallow import ValidationError
 
 from src.service.movie_service import MovieService
-from src.service import custom_response
-from ..model.movie_model import MovieModel, MovieSchema
+from ..model.movie_model import MovieSchema
 from ..shared.Authentication import Auth
 
 movie_api = Namespace("Movie", description="Movie information")
@@ -40,7 +38,6 @@ class MovieSearch(Resource):
 
 
 @movie_api.route('/<movie_id>')
-@movie_api.param("movie_id", "Movie ID")
 class MovieIdResource(Resource):
 
     @accepts(schema=MovieSchema(partial=True), api=movie_api)

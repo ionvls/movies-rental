@@ -3,10 +3,10 @@ from flask import request
 from flask_accepts import accepts, responds
 from flask_restplus import Namespace, Resource
 
-from ..shared.Authentication import Auth
-from ..model.genre_model import GenreModel, GenreSchema
+from ..model.genre_model import GenreSchema
 from ..model.movie_model import MovieSchema
 from ..service.genre_service import GenreService
+from ..shared.Authentication import Auth
 
 genre_api = api = Namespace("Genre", description="Genre information")
 
